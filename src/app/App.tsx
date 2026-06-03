@@ -6,6 +6,9 @@ import {
   Globe, Smartphone, LineChart, Settings, CheckCircle,
   ArrowRight, Star, Award, Clock, Shield
 } from 'lucide-react';
+import logo from "../assets/highcrown-logo__1_.png";
+import demo_1 from "../assets/demo-1.png";
+import demo_2 from "../assets/demo-2.png";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,7 +40,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center cursor-pointer">
-              <img src="highcrown-logo__1_.png" alt="Highcrown Digital Hub" className="h-12" />
+              <img src={logo} alt="Highcrown Digital Hub" className="h-12" />
             </div>
 
             {/* Desktop Menu */}
@@ -527,13 +530,13 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                img: 'demo-1.png',
+                img: demo_1,
                 title: 'PrimeLand Estates',
                 desc: 'High-converting page for premium property developers',
                 url: 'https://real-estate-demo-1-ruby.vercel.app'
               },
               {
-                img: 'demo-2.png',
+                img: demo_2,
                 title: 'Prestige Heights Realty',
                 desc: 'Full-featured site with property listings',
                 url: 'https://real-estate-demo-2-three.vercel.app/'
@@ -770,7 +773,7 @@ export default function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             {/* Brand */}
             <div className="lg:col-span-2">
-              <img src="highcrown-logo__1_.png" alt="Highcrown Digital Hub" className="h-12 mb-4 brightness-0 invert" />
+              <img src={logo} alt="Highcrown Digital Hub" className="h-12 mb-4 brightness-0 invert" />
               <p className="text-gray-400 mb-6">
                 Helping Real Estate Businesses Generate More Qualified Leads Through Digital Marketing, Conversion-Focused Websites, and Automation.
               </p>

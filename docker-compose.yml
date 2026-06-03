@@ -1,0 +1,7 @@
+services:
+  real-estate:
+    build: .
+    container_name: real-estate
+    restart: unless-stopped
+    ports:
+      - "3001:80"
