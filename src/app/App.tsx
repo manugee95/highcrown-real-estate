@@ -527,14 +527,16 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                img: 'https://images.unsplash.com/photo-1519222970733-f546218fa6d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800',
-                title: 'Luxury Villa Landing Page',
-                desc: 'High-converting page for premium property developers'
+                img: 'demo-1.png',
+                title: 'PrimeLand Estates',
+                desc: 'High-converting page for premium property developers',
+                url: 'https://real-estate-demo-1-ruby.vercel.app'
               },
               {
-                img: 'https://images.unsplash.com/photo-1634084462412-b54873c0a56d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800',
-                title: 'Real Estate Agency Website',
-                desc: 'Full-featured site with property listings and CRM'
+                img: 'demo-2.png',
+                title: 'Prestige Heights Realty',
+                desc: 'Full-featured site with property listings',
+                url: 'https://real-estate-demo-2-three.vercel.app/'
               },
               // {
               //   img: 'https://images.unsplash.com/photo-1648134859175-78b41b4db186?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800',
@@ -566,9 +568,14 @@ export default function App() {
                 <div className="p-6">
                   <h3 className="text-2xl font-bold text-[#0F172A] mb-2">{project.title}</h3>
                   <p className="text-gray-600 mb-4">{project.desc}</p>
-                  <button className="text-[#DC2626] font-semibold hover:gap-3 inline-flex items-center gap-2 transition-all cursor-pointer">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#DC2626] font-semibold hover:gap-3 inline-flex items-center gap-2 transition-all cursor-pointer"
+                  >
                     View Demo <ArrowRight size={18} />
-                  </button>
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -600,7 +607,7 @@ export default function App() {
               },
               {
                 img: 'https://images.unsplash.com/photo-1610631066894-62452ccb927c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=200',
-                name: 'Jennifer Adeyemi',
+                name: 'Jennifer Adejobi',
                 position: 'Director, Luxury Estate Group',
                 review: 'The premium package paid for itself in the first month. Our conversion rate doubled and we closed 3 major deals directly from their landing page and Facebook campaigns.'
               },
@@ -799,8 +806,8 @@ export default function App() {
             <div>
               <h4 className="font-bold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>info@highcrowndigital.com</li>
-                <li>+234 XXX XXX XXXX</li>
+                <li>info@hcdigitalhub.com</li>
+                <li>+234 903 038 1626</li>
                 <li>Lagos, Nigeria</li>
               </ul>
             </div>
