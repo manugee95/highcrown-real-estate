@@ -1123,7 +1123,6 @@ export default function App() {
               <h4 className="font-bold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>info@hcdigitalhub.com</li>
-                <li>+234 903 038 1626</li>
                 <li>Lagos, Nigeria</li>
               </ul>
             </div>
