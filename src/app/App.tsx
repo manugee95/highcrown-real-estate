@@ -28,6 +28,7 @@ import {
 import logo from "../assets/highcrown-logo__1_.png";
 import demo_1 from "../assets/demo-1.png";
 import demo_2 from "../assets/demo-2.png";
+import Pixel from "../pixel";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,6 +36,16 @@ export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    Pixel.pageView();
+
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.get("booking") === "success") {
+      Pixel.trackCustom("StrategyCallBooked");
+
+      window.history.replaceState({}, "", window.location.pathname);
+    }
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
@@ -48,6 +59,12 @@ export default function App() {
       element.scrollIntoView({ behavior: "smooth" });
       setIsMenuOpen(false);
     }
+  };
+
+  const bookCall = () => {
+    Pixel.trackCustom("BookCallClicked");
+
+    window.location.href = "https://calendly.com/manugeetech/30min";
   };
 
   return (
@@ -102,14 +119,12 @@ export default function App() {
               >
                 Contact
               </button>
-              <a href="https://calendly.com/manugeetech/30min">
-                <button
-                  // onClick={() => scrollToSection('calendly')}
-                  className="bg-gradient-to-r from-[#DC2626] to-[#F59E0B] text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
-                >
-                  Book Free Call
-                </button>
-              </a>
+              <button
+                onClick={bookCall}
+                className="bg-gradient-to-r from-[#DC2626] to-[#F59E0B] text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
+              >
+                Book Free Call
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -164,14 +179,12 @@ export default function App() {
               >
                 Contact
               </button>
-              <a href="https://calendly.com/manugeetech/30min">
-                <button
-                  // onClick={() => scrollToSection("calendly")}
-                  className="w-full bg-gradient-to-r from-[#DC2626] to-[#F59E0B] text-white px-6 py-3 rounded-lg"
-                >
-                  Book Free Call
-                </button>
-              </a>
+              <button
+                onClick={bookCall}
+                className="w-full bg-gradient-to-r from-[#DC2626] to-[#F59E0B] text-white px-6 py-3 rounded-lg"
+              >
+                Book Free Call
+              </button>
             </motion.div>
           )}
         </div>
@@ -196,20 +209,17 @@ export default function App() {
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Highcrown Digital Hub helps real estate businesses attract
-                high-quality buyers through Meta advertising,
-                conversion-focused landing pages, websites, and WhatsApp
-                automation.
+                high-quality buyers through Meta advertising, conversion-focused
+                landing pages, websites, and WhatsApp automation.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <a href="https://calendly.com/manugeetech/30min">
-                  <button
-                    // onClick={() => scrollToSection("calendly")}
-                    className="bg-gradient-to-r from-[#DC2626] to-[#F59E0B] text-white px-8 py-4 rounded-lg text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
-                  >
-                    Book Free Strategy Call
-                  </button>
-                </a>
+                <button
+                  onClick={bookCall}
+                  className="bg-gradient-to-r from-[#DC2626] to-[#F59E0B] text-white px-8 py-4 rounded-lg text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+                >
+                  Book Free Strategy Call
+                </button>
                 <button
                   onClick={() => scrollToSection("solution")}
                   className="border-2 border-[#DC2626] text-[#DC2626] px-8 py-4 rounded-lg text-lg hover:bg-[#DC2626] hover:text-white transition-all duration-300 cursor-pointer"
@@ -334,14 +344,12 @@ export default function App() {
               Book a 30-minute strategy call and discover the biggest
               opportunities to increase your property inquiries.
             </p>
-            <a href="https://calendly.com/manugeetech/30min">
-              <button
-                // onClick={() => scrollToSection("calendly")}
-                className="bg-gradient-to-r from-[#DC2626] to-[#F59E0B] text-white px-10 py-4 rounded-lg text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 inline-flex items-center gap-2 cursor-pointer"
-              >
-                Claim Your Free Audit <ArrowRight size={20} />
-              </button>
-            </a>
+            <button
+              onClick={bookCall}
+              className="bg-gradient-to-r from-[#DC2626] to-[#F59E0B] text-white px-10 py-4 rounded-lg text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 inline-flex items-center gap-2 cursor-pointer"
+            >
+              Claim Your Free Audit <ArrowRight size={20} />
+            </button>
           </motion.div>
         </div>
       </section>
@@ -538,7 +546,7 @@ export default function App() {
                 title: "Conversion Optimization",
                 desc: "Data-driven improvements to maximize ROI",
               },
-              { 
+              {
                 icon: Settings,
                 title: "Funnel Setup",
                 desc: "Complete lead generation systems from ad to sale",
@@ -622,14 +630,12 @@ export default function App() {
                 ))}
               </ul>
 
-              <a href="https://calendly.com/manugeetech/30min">
-                <button
-                  // onClick={() => scrollToSection("calendly")}
-                  className="w-full border-2 border-[#DC2626] text-[#DC2626] px-8 py-4 rounded-lg text-lg hover:bg-[#DC2626] hover:text-white transition-all duration-300 cursor-pointer"
-                >
-                  Book Free Consultation
-                </button>
-              </a>
+              <button
+                onClick={bookCall}
+                className="w-full border-2 border-[#DC2626] text-[#DC2626] px-8 py-4 rounded-lg text-lg hover:bg-[#DC2626] hover:text-white transition-all duration-300 cursor-pointer"
+              >
+                Book Free Consultation
+              </button>
             </motion.div>
 
             {/* Premium Package */}
@@ -676,14 +682,12 @@ export default function App() {
                 ))}
               </ul>
 
-              <a href="https://calendly.com/manugeetech/30min">
-                <button
-                  // onClick={() => scrollToSection("calendly")}
-                  className="w-full bg-white text-[#DC2626] px-8 py-4 rounded-lg text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
-                >
-                  Book Free Consultation
-                </button>
-              </a>
+              <button
+                onClick={bookCall}
+                className="w-full bg-white text-[#DC2626] px-8 py-4 rounded-lg text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+              >
+                Book Free Consultation
+              </button>
             </motion.div>
           </div>
         </div>
@@ -1005,14 +1009,19 @@ export default function App() {
               Let's build a predictable lead generation system that helps your
               real estate business attract, convert, and close more prospects.
             </p>
-            <a href="https://calendly.com/manugeetech/30min">
-              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-lg">
-                {/* <Shield className="text-white" size={24} /> */}
-                <span>Book Your Free Strategy Call</span>
-              </div>
-            </a>
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-lg">
+              {/* <Shield className="text-white" size={24} /> */}
+              {/* <span>Book Your Free Strategy Call</span> */}
+
+              <button
+                onClick={bookCall}
+                className="w-full bg-white text-[#DC2626] px-8 py-4 rounded-lg text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+              >
+                Book Your Free Strategy Call
+              </button>
+            </div>
           </motion.div>
-        </div> 
+        </div>
       </section>
 
       {/* Footer */}
