@@ -196,7 +196,7 @@ export default function App() {
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Highcrown Digital Hub helps real estate businesses attract
-                high-quality buyers through Facebook advertising,
+                high-quality buyers through Meta advertising,
                 conversion-focused landing pages, websites, and WhatsApp
                 automation.
               </p>
@@ -441,7 +441,7 @@ export default function App() {
                 {
                   step: 1,
                   title: "Attract Qualified Buyers",
-                  desc: "Precision-targeted Facebook ads that reach property buyers actively searching in your area",
+                  desc: "Precision-targeted Meta ads that reach property buyers actively searching in your area",
                   icon: Target,
                 },
                 {
@@ -538,7 +538,7 @@ export default function App() {
                 title: "Conversion Optimization",
                 desc: "Data-driven improvements to maximize ROI",
               },
-              {
+              { 
                 icon: Settings,
                 title: "Funnel Setup",
                 desc: "Complete lead generation systems from ad to sale",
